@@ -1,0 +1,43 @@
+model User {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  email    String @unique
+  password String
+
+  name      String  @default("null")
+  lastName  String  @default("null")
+  telephone String?
+
+  forms Form[]
+
+  @@map("users")
+}
+
+model Form {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  domain       String
+  signupUrl    String
+  loginUrl     String
+  signupFields String
+  loginFields  String
+  userId       Int
+  user         User   @relation(fields: [userId], references: [id])
+
+  @@map("forms")
+}
+
+
+
+
+DATABASE_URL="postgresql://postgres:123@localhost:5434/nest?schema=public"
+
+# ---------------------------------- Bcrypt ---------------------------------- #
+BCRYPT_SALT=8
+# ------------------------------------ JWT ----------------------------------- #
+JWT_SECRET=secretjsonwebtoken
+JWT_EXPIRE=20min
