@@ -1,12 +1,12 @@
 import { Module } from '@nestjs/common';
 import { AuthModule } from './auth/user.module';
-import { UserUrlsModule } from './user-urls/user-urls.module';
+import { FormUrlsModule } from './form-urls/form-urls.module';
 import { PrismaModule } from './prisma/prisma.module';
 import { ConfigModule } from '@nestjs/config';
-import { ErrorMessagesModule } from './error-messages/error-messages.module';
+import { MessagesModule } from './messages/messages.module';
 
 
 @Module({
-  imports: [ConfigModule.forRoot({ isGlobal: true }), AuthModule, UserUrlsModule, PrismaModule, ErrorMessagesModule],
+  imports: [ConfigModule.forRoot({ isGlobal: true }), AuthModule, FormUrlsModule, PrismaModule, MessagesModule],
 })
 export class AppModule { }

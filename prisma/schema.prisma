@@ -11,9 +11,10 @@ datasource db {
 }
 
 model User {
-  id        Int      @id @default(autoincrement())
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  id        Int       @id @default(autoincrement())
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  deletedAt DateTime?
 
   email    String @unique
   password String
@@ -27,9 +28,11 @@ model User {
 }
 
 model Url {
-  id           Int      @id @default(autoincrement())
-  createdAt    DateTime @default(now())
-  updatedAt    DateTime @updatedAt
+  id        Int       @id @default(autoincrement())
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  deletedAt DateTime?
+
   domain       String
   code         String
   signupUrl    String

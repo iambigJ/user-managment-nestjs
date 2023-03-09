@@ -1,4 +1,4 @@
-export function setLoginFields(data: object) {
+export function setLoginFields(data: object): void {
 
     const signupFields = JSON.parse(data["signupFields"])
 
