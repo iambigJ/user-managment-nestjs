@@ -15,6 +15,7 @@ model User {
   createdAt DateTime  @default(now())
   updatedAt DateTime  @updatedAt
   deletedAt DateTime?
+  role      String    @default("user")
 
   email    String @unique
   password String
@@ -22,6 +23,7 @@ model User {
   name      String  @default("null")
   lastName  String  @default("null")
   telephone String?
+  ban       Boolean @default(false)
   urls      Url[]
 
   @@map("users")

@@ -8,7 +8,8 @@
   "scripts": {
     "dev:db:rm": "docker-compose rm -f -s -v",
     "dev:db:up": "docker-compose up -d",
-    "dev:db:restart": "npm run dev:db:rm && npm run dev:db:up",
+    "dev:db:deploy": "npx prisma migrate deploy",
+    "dev:db:restart": "npm run dev:db:rm && npm run dev:db:up && sleep 1 && npm run dev:db:deploy",
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",

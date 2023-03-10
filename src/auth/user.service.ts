@@ -41,17 +41,18 @@ export class AuthService {
             if (!pwCompare) {
                 throw new BadRequestException(this.globalMessage.passwordOrEmailWereWrong())
             }
-            return await this.#signToken(user.id, user.email)
+            return await this.signToken(user.id, user.email, user.role)
 
         } catch (error) {
             if (error.code === "P2002") throw new ForbiddenException(this.globalMessage.credentialsError())
             throw error
         }
     }
-    async #signToken(userId: number, email: string): Promise<{ access_token: string }> {
+    private async signToken(userId: number, email: string, role: string): Promise<{ access_token: string }> {
         const payload = {
             sub: userId,
-            email
+            email,
+            role
         }
         const token = await this.jwt.signAsync(payload, { secret: this.config.get("JWT_SECRET"), expiresIn: this.config.get("JWT_EXPIRE") })
         return {
