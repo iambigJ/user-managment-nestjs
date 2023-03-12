@@ -24,6 +24,9 @@ export class MessagesService {
     unAuthorized(): string {
         return "Un authorized!"
     }
+    duplicateUniqueValue(unique: string): string {
+        return `${unique} already used!`
+    }
     notFound(): string {
         return "Not found!"
     }

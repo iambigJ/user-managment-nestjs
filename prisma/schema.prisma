@@ -20,11 +20,12 @@ model User {
   email    String @unique
   password String
 
-  name      String  @default("null")
-  lastName  String  @default("null")
-  telephone String?
-  ban       Boolean @default(false)
-  urls      Url[]
+  name         String         @default("null")
+  lastName     String         @default("null")
+  telephone    String?
+  ban          Boolean        @default(false)
+  urls         Url[]
+  UsersMembers UsersMembers[]
 
   @@map("users")
 }
@@ -36,13 +37,32 @@ model Url {
   deletedAt DateTime?
 
   domain       String
-  code         String
+  code         String         @unique
   signupUrl    String
   loginUrl     String
   signupFields Json
   loginFields  String[]
   userId       Int
-  user         User     @relation(fields: [userId], references: [id])
+  user         User           @relation(fields: [userId], references: [id])
+  UsersMembers UsersMembers[]
 
   @@map("urls")
+}
+
+model UsersMembers {
+  id        Int       @id @default(autoincrement())
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  deletedAt DateTime?
+
+  signupFields Json?
+  ban          Boolean @default(false)
+  formCode     String
+  form         Url     @relation(fields: [formCode], references: [code])
+
+  userId Int
+  user   User @relation(fields: [userId], references: [id])
+
+  @@index([formCode], type: Hash)
+  @@map("users-members")
 }
