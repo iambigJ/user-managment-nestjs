@@ -1,6 +1,6 @@
 import { Injectable, NotFoundException, UnauthorizedException } from '@nestjs/common';
-import { MessagesService } from 'src/messages/messages.service';
-import { PrismaService } from 'src/prisma/prisma.service';
+import { MessagesService } from '../messages/messages.service';
+import { PrismaService } from '../prisma/prisma.service';
 import { createForm } from './model';
 
 @Injectable()

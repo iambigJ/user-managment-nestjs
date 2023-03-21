@@ -1,6 +1,6 @@
 import { Body, Controller, Delete, Get, Param, Patch, Put, Req } from "@nestjs/common";
 import { Request } from "express"
-import { MessagesService } from "src/messages/messages.service";
+import { MessagesService } from "../messages/messages.service";
 import { userUpdateDto } from "./dto";
 import { UserService } from "./user.service";
 

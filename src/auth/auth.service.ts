@@ -1,9 +1,9 @@
 import { BadRequestException, ForbiddenException, Injectable, NotFoundException } from '@nestjs/common';
-import { PrismaService } from 'src/prisma/prisma.service';
+import { PrismaService } from '../prisma/prisma.service';
 import { loginDto, signupDto } from './dto';
 import * as bcrypt from "bcrypt"
 import { ConfigService } from '@nestjs/config';
-import { MessagesService } from 'src/messages/messages.service';
+import { MessagesService } from '../messages/messages.service';
 import { JwtService } from '@nestjs/jwt';
 
 @Injectable()

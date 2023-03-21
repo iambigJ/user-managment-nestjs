@@ -1,6 +1,6 @@
 import { MiddlewareConsumer, Module, NestModule } from '@nestjs/common';
-import { MessagesService } from 'src/messages/messages.service';
-import { PrismaService } from 'src/prisma/prisma.service';
+import { MessagesService } from '../messages/messages.service';
+import { PrismaService } from '../prisma/prisma.service';
 import { AdminController } from './admin.controller';
 import { AdminService } from './admin.service';
 import { isAdmin } from './guard';

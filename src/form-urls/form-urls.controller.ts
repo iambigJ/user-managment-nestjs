@@ -1,4 +1,4 @@
-import { BadRequestException, Body, Controller, Delete, Get, Param, Patch, Post, Put, Req, UseGuards } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Patch, Post, Put, Req, UseGuards } from '@nestjs/common';
 import { Request } from "express"
 import { formDto } from './dto';
 import * as randomSTR from "randomstring"
@@ -7,7 +7,7 @@ import { createForm } from './model';
 import { UserUrlsService } from './form-urls.service';
 import { importDataForValidate } from './validate';
 import { AuthGuard } from '@nestjs/passport';
-import { MessagesService } from 'src/messages/messages.service';
+import { MessagesService } from '../messages/messages.service';
 
 
 @Controller('form')
@@ -32,10 +32,10 @@ export class UserUrlsController {
     }
 
 
-    @Post('new/:id')
-    async createFormPOST_controller(@Param() id: string, @Body() dto: formDto) {
+    @Post('new')
+    async createFormPOST_controller(@Body() dto: formDto, @Req() req: Request) {
         const data: createForm = {
-            userId: parseInt(id["id"]),
+            userId: req.user["userId"],
             domain: dto.domain,
             signupFields: JSON.stringify(dto.signupFields),
             signupUrl: '',

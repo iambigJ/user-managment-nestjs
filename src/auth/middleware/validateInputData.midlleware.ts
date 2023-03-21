@@ -1,5 +1,5 @@
 import { BadRequestException } from "@nestjs/common"
-import { authModuleMessages } from "src/_messages"
+import { authModuleMessages } from "../../_messages"
 
 export function validateInputDataFromUrLsUser(signupForm: object, bodyData: object): object {
     var validData = {}

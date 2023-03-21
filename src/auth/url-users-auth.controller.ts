@@ -1,5 +1,5 @@
 import { Body, Controller, Get, Post, Query } from '@nestjs/common';
-import { MessagesService } from 'src/messages/messages.service';
+import { MessagesService } from '../messages/messages.service';
 import { signupValidQueris, validQuerisForGetForm } from './dto';
 import { AuthUrlsService } from './url-users-auth.service';
 
