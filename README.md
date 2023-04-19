@@ -11,38 +11,26 @@ $ npm install
 
 ```bash
 # development
-$ npm run start
+1- Please install docker and docker compose 
+2- npm run dev:db:restart ( for rm , up and migrate db )
+3- npm run start:dev
 
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
 ```
 
 ## Test
 
 ```bash
-# unit tests
-$ npm run test
-
 # e2e tests
 $ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
+1- npm run test:db:restart ( for rm , up and migrate db )
+2- npm run test:e2e
 ```
 
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
 
 ## Stay in touch
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
+- Author - [ALI.JAVADI ](https://iambigj.info/)
+- email - aliJavadiJ@gmail.com
 ## License
 
 Nest is [MIT licensed](LICENSE).

@@ -1,7 +1,7 @@
 {
-  "name": "aaa_project",
-  "version": "0.0.1",
-  "description": "",
+  "name": "user-managment-project",
+  "version": "1.0.0",
+  "description": "this is simple project for user managment such as auth and profile and form service you can Inspiration your projects",
   "author": "ALI.JAVADI",
   "private": true,
   "license": "MIT",

@@ -34,7 +34,7 @@ describe("App E2E", () => {
     describe("Signup", () => {
       it("Should signup", () => {
         const dto: signupDto = {
-          email: "reza@outlook.com   ",
+          email: "alijavadij@outlook.com   ",
           password: "rez   ",
           name: "ramin ",
           lastName: "Mousavi   ",
@@ -50,7 +50,7 @@ describe("App E2E", () => {
     describe("Login", () => {
       it("Should Login", () => {
         const dto: loginDto = {
-          email: "reza@outlook.com",
+          email: "alijavadij@outlook.com",
           password: "rez   "
         }
         return pactum
